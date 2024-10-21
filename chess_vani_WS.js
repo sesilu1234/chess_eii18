@@ -377,6 +377,10 @@ socket.onclose = function(event) {
         document.querySelector('.left_column').style.display = 'none';
         document.querySelector('.right_column').style.display = 'none';
 
+
+        document.querySelector('.screen_1').style.justifyContent = 'center';
+        document.querySelector('.screen_1').style.alignItems = 'center';
+
         
         document.querySelector('.grid_container').style.transform = 'scale(1)';
         document.querySelector('.grid_container').style.display = 'grid';
