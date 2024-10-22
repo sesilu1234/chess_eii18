@@ -382,7 +382,7 @@ socket.onclose = function(event) {
         document.querySelector('.screen_1').style.alignItems = 'center';
 
         
-        document.querySelector('.grid_container').style.transform = 'scale(1)';
+        
         document.querySelector('.grid_container').style.display = 'grid';
 
 
@@ -1195,10 +1195,7 @@ socket.onclose = function(event) {
     
             image.style.width = '60%';
             image.style.height = '100%';
-            image.style.position = 'relative';
-            image.style.left = '10px';
-            image.style.top = '-4px';
-    
+            
             gridItem.appendChild(image);
         }
     }

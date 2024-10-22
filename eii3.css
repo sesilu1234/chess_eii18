@@ -59,16 +59,24 @@ body {
     border:10px solid #770e367b;
     border-radius: 15px;
     
-    transform: scale(1);
     
-    
-    
+
     }
+
+   
+    
+   
+    
+
+
     .grid-item {
     width: 50px;
     height: 50px;
     border: 1px solid #000000;
+    
     }
+
+   
 
 /* Centering the content in the left_column */
 .left_column {
@@ -578,8 +586,22 @@ margin-bottom: 5%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Optional shadow for extra depth */
 }
 
-    
+    .grid_container {
 
+    
+    transform: scale(0.9);
+
+}
  
 }
 
+@media (max-width: 480px) {
+    
+    .grid_container {
+
+    
+        transform: scale(0.7);
+    
+    }
+
+}
