@@ -14,13 +14,11 @@
     --text-color: #333;
 }
 
-html{text-align: center;}
-
 body {
     background-color: black;
     height: 100vh;
-    
-    display: inline-flex;
+    width: 100vw;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -229,14 +227,18 @@ width:70%;
 
         margin-top: 15%;
 
-        display:flex;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers children horizontally */
+
+        margin-bottom: 15%;
 
 
     }
 
     .input_1{
         
-        width:48%;
+        width:auto;
         
 
         display:block;
@@ -405,6 +407,8 @@ width:70%;
 
         width:48%;
 
+        margin-top : 10%;
+
         display:block;
         justify-content: center;
         transform: translateY(1px);
@@ -478,26 +482,21 @@ margin-bottom: 5%;
 @media (max-width: 768px) {
     .screen_1 {
         flex-direction: column;
-        
-        width: 85vw;
+        height: auto;
+        width: 90vw;
     }
 
-    .input{
-
-        margin-bottom: 25%;
-    }
-
-    .github_icon {
-
-        display: none;
-
+    .left_column,
+    .right_column {
+        width: 100%;
+        height: 50vh;
     }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 480px) {
     .screen_1 {
         height: auto;
-        width: 85vw;
+        width: 95vw;
     }
 
     .left_column,
@@ -505,3 +504,13 @@ margin-bottom: 5%;
         height: auto;
     }
 }
+
+
+
+
+
+
+@media (max-width: 609px) {
+    /* CSS rules go here */
+  }
+  
