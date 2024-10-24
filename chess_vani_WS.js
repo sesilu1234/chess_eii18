@@ -191,7 +191,7 @@ socket.onmessage = function(event) {
     // Handle specific message types
     if (message.type === 'start_game') {
 
-      
+        document.querySelector('.form').style.display = "none";
 
         chess_game(payload.id, payload.player, payload.color1, payload.color2, payload.round) 
 
@@ -234,7 +234,30 @@ socket.onclose = function(event) {
         
 
 
-        const id = Math.floor(Math.random() * 100000); // Function to generate game ID
+        function getRandomInt() {
+            return Math.floor(Math.random() * 10);
+        }
+        
+        function getRandomLetter() {
+            const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+            return letters.charAt(Math.floor(Math.random() * letters.length));
+        }
+        
+        let id = getRandomLetter() + getRandomInt() + "-" +
+                 getRandomLetter() + getRandomLetter() + getRandomInt() + getRandomLetter() + "-" +
+                 getRandomLetter() + getRandomLetter() + getRandomInt() + getRandomInt();
+       
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+        // Function to generate game ID
         const player1 = inputs[0].value;
         const player2 = inputs[1].value;
      // Replace with actual player 1 info
@@ -254,29 +277,53 @@ socket.onclose = function(event) {
             
         };
 
-   
+        
 
         socket.send(JSON.stringify(gameData));
 
         console.log("id",id);
 
-      
+        document.querySelector('.ID_letters h5').textContent = `${id}`;
+
+        document.querySelector('.form').style.display = "block";
 
 
 
 
+        const copySymbol = document.querySelector('.copy_symbol');
+
+
+
+copySymbol.addEventListener('mousedown', function() {
+    const copyText = document.querySelector('.ID_letters h5').innerText; 
+
+    
+    copySymbol.style.backgroundColor = '#d3d3d3'; 
+    navigator.clipboard.writeText(copyText)
+        .then(() => {
+            
+            /*document.querySelector('.alert_copy').style.display = "block";*/
+        })
+        .catch(err => {
+            console.error('Could not copy text: ', err);
+        });
+  
+});
+
+
+copySymbol.addEventListener('mouseup', function() {
+    // Revert background color when the mouse leaves
+    copySymbol.style.backgroundColor = ''; // Reset to original color
+});
+copySymbol.addEventListener('mouseleave', function() {
+    // Revert background color when the mouse leaves
+    copySymbol.style.backgroundColor = ''; // Reset to original color
+});
      
 
  
         
 
-
-    
-
-       /* const btncreate = document.querySelector('.styled-create');
-
-        btncreate.value = id;*/
-    
         
     
         

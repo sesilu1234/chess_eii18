@@ -35,20 +35,21 @@ wss.on("connection", (ws) => {
           const isoString = now.toISOString();
           const time = isoString.replace("T", " ").substring(0, 19);
 
-          const sql =
-            "INSERT INTO created_games (id, player1, color1, player2, color2, date_of_connection) VALUES (?, ?, ?, ?, ?, ?)";
+          const sql = "CALL insert_game_1(?, ?, ?, ?, ?, ?)";
 
-          try {
+    try {
+        const [rows] = await promisePool.query(sql, [
+            payload.id,
+            payload.player1,
+            payload.color1,
+            payload.player2,
+            payload.color2,
+            time,
+        ]);
 
-           
-            const [rows] = await promisePool.query(sql, [
-              payload.id,
-              payload.player1,
-              payload.color1,
-              payload.player2,
-              payload.color2,
-              time,
-            ]);
+
+
+        
             console.log("Game inserted successfully with ID:", payload.id);
           } catch (error) {
             console.error("Error inserting game:", error);
