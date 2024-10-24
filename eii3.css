@@ -473,10 +473,82 @@ margin-bottom: 5%;
 
 
 
+.form{
+
+    position:absolute;
+    width : 320px;
+    height: 320px;
+    background-color: #ECE6F0;
+    opacity: 0.9;
+    border-radius: 10%;
+    z-index: 1;
+
+}
+
+.game_created {
+
+    color: #7c6b6b;
+    font-size: 0.8em;
+    padding: 5%;
+    margin-top: 5%;
+
+}
 
 
 
+.waiting_2nd {
 
+    color: #313030;
+    font-size: 0.85em;
+    padding: 2%;
+    
+
+
+}
+
+.ID_copy{
+
+    display:flex;
+    margin : 10%;
+
+
+}
+
+
+.ID_symbol{
+    
+    background-color: #9581b4;
+    padding: 5%;
+    border-radius: 40%;
+    margin-right: 5%;
+
+
+}
+
+.ID_letters {
+    color : rgb(42, 40, 40) ;
+    font-size: 1.5em;
+    font-family: "EB Garamond", sans-serif;
+    font-weight: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* This centers horizontally as well */
+   padding: 5%;
+}
+
+
+.copy_symbol {
+
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 5%;
+
+
+}
+ 
 
 
 
